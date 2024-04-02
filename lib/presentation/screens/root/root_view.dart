@@ -3,7 +3,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sbeu_reactive_pattern/reactive/reactive_builder.dart';
 import 'package:spektr/app/app.dart';
-import 'package:spektr/data/hive_service.dart';
 import 'package:spektr/gen/assets.gen.dart';
 import 'package:spektr/navigation/app_router.dart';
 import 'package:spektr/presentation/screens/about/about_view.dart';
