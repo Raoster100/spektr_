@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import '../../../../data/hive_service.dart';
-import '../../../../data/models/hive_models.dart';
+
 
 class WorkDialog extends StatefulWidget {
   const WorkDialog({
@@ -18,12 +17,12 @@ class _WorkDialogState extends State<WorkDialog> {
   final descriptionController = TextEditingController();
   final priceController = TextEditingController();
 
-  _addWork() async {
+ /* _addWork() async {
     HiveService().putWork(Work(
         name: nameController.text,
         price: priceController.text,
         description: descriptionController.text));
-  }
+  }*/
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +58,7 @@ class _WorkDialogState extends State<WorkDialog> {
                     ),
                   ),
                   CupertinoButton(
-                      child: Text('Добавить работу'), onPressed: _addWork),
+                      child: Text('Добавить работу'), onPressed: /*_addWork*/null),
                   CupertinoButton(
                       child: Text('Отменить'),
                       onPressed: Navigator.of(context).pop)
