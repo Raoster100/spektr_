@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:spektr/data/hive_service.dart';
-import 'package:spektr/data/models/hive_models.dart';
+
 
 class OrderDialog extends StatefulWidget {
   const OrderDialog({
@@ -21,13 +20,13 @@ class _OrderDialogState extends State<OrderDialog> {
   List<String> items = ['Аренда', 'Услуга'];
   String? selectedItem = 'Аренда';
 
-  _addOrder() async {
+  /*_addOrder() async {
     HiveService().putOrder(Order(
         name: nameController.text,
         phone: phoneController.text,
         type: selectedItem.toString(),
         hours: hoursController.text));
-  }
+  }*/
 
   @override
   Widget build(BuildContext context) {
@@ -74,7 +73,7 @@ class _OrderDialogState extends State<OrderDialog> {
                     ),
                   ),
                   CupertinoButton(
-                      child: Text('Добавить заказ'), onPressed: _addOrder),
+                      child: Text('Добавить заказ'), onPressed: /*_addOrder*/null),
                   CupertinoButton(
                       child: Text('Отменить'),
                       onPressed: Navigator.of(context).pop)
