@@ -3,8 +3,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:file_picker/file_picker.dart';
-import 'package:spektr/data/hive_service.dart';
-import 'package:spektr/data/models/hive_models.dart';
 import 'package:spektr/navigation/app_router.dart';
 
 class RentDialog extends StatefulWidget {
@@ -22,13 +20,13 @@ class _RentDialogState extends State<RentDialog> {
   final priceController = TextEditingController();
   Uint8List? pickedImage;
 
-  _addRent() async {
+  /*_addRent() async {
     HiveService().putRentVehicle(RentVehicle(
         name: nameController.text,
         price: priceController.text,
         description: descriptionController.text,
         image: pickedImage));
-  }
+  }*/
 
   @override
   Widget build(BuildContext context) {
@@ -79,7 +77,7 @@ class _RentDialogState extends State<RentDialog> {
                     ),
                   ),
                   CupertinoButton(
-                      child: Text('Добавить аренду'), onPressed: _addRent),
+                      child: Text('Добавить аренду'), onPressed: /*_addRent*/null),
                   CupertinoButton(
                       child: Text('Отменить'),
                       onPressed: Navigator.of(context).pop)
