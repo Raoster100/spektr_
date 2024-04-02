@@ -1,7 +1,6 @@
+/*
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:spektr/data/hive_service.dart';
-import 'package:spektr/data/models/hive_models.dart';
 import 'package:spektr/presentation/screens/admin/widget/order_dialog.dart';
 import 'package:spektr/presentation/screens/admin/widget/rent_dialog.dart';
 import 'package:spektr/presentation/screens/admin/widget/vacancy_dialog.dart';
@@ -208,3 +207,4 @@ class _AdminViewState extends State<AdminView> {
     );
   }
 }
+*/
