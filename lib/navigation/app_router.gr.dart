@@ -21,12 +21,12 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const AboutView(),
       );
     },
-    Admin.name: (routeData) {
+/*    Admin.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const AdminView(),
       );
-    },
+    },*/
     Login.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
