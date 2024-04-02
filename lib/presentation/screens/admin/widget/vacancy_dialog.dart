@@ -1,8 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:spektr/data/hive_service.dart';
-import 'package:spektr/data/models/hive_models.dart';
 
 class VacancyDialog extends StatefulWidget {
   const VacancyDialog({
@@ -18,12 +16,12 @@ class _VacancyDialogState extends State<VacancyDialog> {
   final descriptionController = TextEditingController();
   final priceController = TextEditingController();
 
-  _addVacancy() async {
+/*  _addVacancy() async {
     HiveService().putVacancy(Vacancy(
         name: nameController.text,
         price: priceController.text,
         description: descriptionController.text));
-  }
+  }*/
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +57,7 @@ class _VacancyDialogState extends State<VacancyDialog> {
                     ),
                   ),
                   CupertinoButton(
-                      child: Text('Добавить вакансию'), onPressed: _addVacancy),
+                      child: Text('Добавить вакансию'), onPressed: /*_addVacancy*/null),
                   CupertinoButton(
                       child: Text('Отменить'),
                       onPressed: Navigator.of(context).pop)
