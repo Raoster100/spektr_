@@ -17,7 +17,11 @@ class Spectrdatabase extends _$Spectrdatabase {
   Spectrdatabase() : super(_openConnection());
 
   int get schemaVersion => 1;
-  }
+
+/*  Future<void> addRent(RentVehicleCompanion entry) {
+    return into(RentVehicle).insert(entry);
+  }*/
+}
 
 LazyDatabase _openConnection() {
   // the LazyDatabase util lets us find the right location for the file async.
