@@ -1,4 +1,8 @@
 import 'dart:async';
+import 'dart:io';
+import 'package:path/path.dart' as p;
+import 'dart:ui';
+import 'package:drift/native.dart';
 import 'package:drift/wasm.dart';
 import 'package:drift/drift.dart';
 import 'package:path/path.dart';
@@ -49,25 +53,22 @@ class Spectrdatabase extends _$Spectrdatabase {
 
   int get schemaVersion => 1;
 
+  LazyDatabase _openConnection() {
+    // the LazyDatabase util lets us find the right location for the file async.
+    return LazyDatabase(() async {
+      // put the database file, called db.sqlite here, into the documents folder
+      // for your app.
+      final dbFolder = await getApplicationDocumentsDirectory();
+      final file = File(p.join(dbFolder.path, 'db.sqlite'));
+
+      return NativeDatabase.createInBackground(file);
+    });
+  }
+
 /*  static Future<QueryExecutor> _openConnection() async {
     final appDirectory = await getApplicationDocumentsDirectory();
     final databasePath = join(appDirectory.path, 'spectrdatabase.db');
     final executor = ;
     return executor;
   }*/
-
-  /*factory Spectrdatabase() => Spectrdatabase._(_openConnection());*/
-
-  @override
-  MigrationStrategy get migration => MigrationStrategy(
-    onCreate: (m) async {
-      await m.createAll();
-    },
-    onUpgrade: (m, from, to) async {
-      // Migration code goes here
-    },
-    beforeOpen: (details) async {
-      // Opening logic goes here
-    },
-  );
 }
