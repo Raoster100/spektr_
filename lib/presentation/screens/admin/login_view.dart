@@ -22,7 +22,7 @@ class _LoginViewState extends State<LoginView> {
   void goToAdmin() {
     if (loginController.text == '123' && passwordController.text == '123') {
       App.isAuthorized = true;
-      App.router.navigate(Admin());
+      /*App.router.navigate(Admin());*/
     }
   }
 
