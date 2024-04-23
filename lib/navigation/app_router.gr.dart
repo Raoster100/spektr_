@@ -21,12 +21,6 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const AboutView(),
       );
     },
-/*    Admin.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const AdminView(),
-      );
-    },*/
     Login.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -70,20 +64,6 @@ class About extends PageRouteInfo<void> {
         );
 
   static const String name = 'About';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// generated route for
-/// [AdminView]
-class Admin extends PageRouteInfo<void> {
-  const Admin({List<PageRouteInfo>? children})
-      : super(
-          Admin.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'Admin';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
