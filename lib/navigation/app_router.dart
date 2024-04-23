@@ -42,10 +42,10 @@ class AppRouter extends _$AppRouter {
           page: Login.page,
           path: '/login',
         ),
-        AutoRoute(
+/*        AutoRoute(
           page: Admin.page,
           path: '/admin',
           guards: [AuthGuard()],
-        )
+        )*/
       ];
 }
