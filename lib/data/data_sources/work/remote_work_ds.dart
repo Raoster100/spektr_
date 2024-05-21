@@ -3,13 +3,13 @@ import 'package:spektr/data/data_sources/core/app_remote_ds.dart';
 import 'package:spektr/data/models/models.dart';
 import 'package:spektr/data/models/work/work_dto.dart';
 
-/*part 'remote_work_ds.chopper.dart';*/
+part 'remote_work_ds.chopper.dart';
 
 @ChopperApi(baseUrl: 'Work')
 abstract class RemoteWorkDataSource extends ChopperService
     implements AppRemoteDataSource {
-/*  static RemoteWorkDataSource create([ChopperClient? client]) =>
-      _$RemoteWorkDataSource(client);*/
+  static RemoteWorkDataSource create([ChopperClient? client]) =>
+      _$RemoteWorkDataSource(client);
 
   @Get()
   Future<Response<List<WorkModel>>> fetch();
