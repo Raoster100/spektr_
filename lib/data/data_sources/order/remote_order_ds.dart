@@ -3,13 +3,13 @@ import 'package:spektr/data/data_sources/core/app_remote_ds.dart';
 import 'package:spektr/data/models/models.dart';
 import '../../models/order/order_dto.dart';
 
-/*part 'remote_order_ds.chopper.dart';*/
+part 'remote_order_ds.chopper.dart';
 
 @ChopperApi(baseUrl: 'Order')
 abstract class RemoteOrderDataSource extends ChopperService
     implements AppRemoteDataSource {
-/*  static RemoteOrderDataSource create([ChopperClient? client]) =>
-      _$RemoteOrderDataSource(client);*/
+  static RemoteOrderDataSource create([ChopperClient? client]) =>
+      _$RemoteOrderDataSource(client);
 
   @Get()
   Future<Response<List<OrderModel>>> fetch();
