@@ -1,19 +1,19 @@
 import 'dart:typed_data';
 import 'package:dart_mappable/dart_mappable.dart';
-part 'rent_model.mapper.dart';
+part 'rent_dto.mapper.dart';
 
 @MappableClass()
-class RentModel with RentModelMappable {
-  RentModel({
+class RentDto with RentDtoMappable {
+  RentDto({
     required this.id,
     required this.name,
     required this.price,
-    required this.description,
-    required this.image
+    this.description,
+    this.image
   });
   final int id;
   final String name;
   final int price;
-  final String description;
-  final Uint8List image;
+  final String? description;
+  final Uint8List? image;
 }
