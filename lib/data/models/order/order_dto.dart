@@ -1,18 +1,18 @@
 import 'package:dart_mappable/dart_mappable.dart';
-part 'order_model.mapper.dart';
+part 'order_dto.mapper.dart';
 
 @MappableClass()
-class OrderModel with OrderModelMappable {
-  OrderModel({
+class OrderDto with OrderDtoMappable {
+  OrderDto({
     required this.id,
     required this.name,
     required this.phone,
-    required this.type,
-    required this.hours
+    this.type,
+    this.hours
   });
   final int id;
   final String name;
   final String phone;
-  final String type;
-  final int hours;
+  final String? type;
+  final int? hours;
 }
