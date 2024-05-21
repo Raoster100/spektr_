@@ -1,5 +1,3 @@
-import 'dart:typed_data';
-
 import 'package:dart_mappable/dart_mappable.dart';
 part 'config_model.mapper.dart';
 
