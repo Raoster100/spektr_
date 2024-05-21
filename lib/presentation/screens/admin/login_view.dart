@@ -9,8 +9,6 @@ import '../../../app/app.dart';
 class LoginView extends StatefulWidget {
   const LoginView({Key? key}) : super(key: key);
 
-
-
   @override
   State<LoginView> createState() => _LoginViewState();
 }
@@ -36,47 +34,48 @@ class _LoginViewState extends State<LoginView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Center(
-          child: Column(
-            children: [
-              Center(
-                child: SizedBox(
-                  width: 400,
-                  child: TextFormField(
-                    controller: loginController,
-                    decoration: InputDecoration(hintText: 'Логин'),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Center(
+            child: Column(
+              children: [
+                Center(
+                  child: SizedBox(
+                    width: 400,
+                    child: TextFormField(
+                      controller: loginController,
+                      decoration: InputDecoration(hintText: 'Логин'),
+                    ),
                   ),
                 ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Center(
-                child: SizedBox(
-                  width: 400,
-                  child: TextFormField(
-                    controller: passwordController,
-                    decoration: InputDecoration(hintText: 'Пароль'),
-                    obscureText: true,
+                SizedBox(
+                  height: 20,
+                ),
+                Center(
+                  child: SizedBox(
+                    width: 400,
+                    child: TextFormField(
+                      controller: passwordController,
+                      decoration: InputDecoration(hintText: 'Пароль'),
+                      obscureText: true,
+                    ),
                   ),
                 ),
-              ),
-              Center(
-                child: CupertinoButton(
-                  onPressed: () {
-                    goToAdmin();
-                  },
-                  child: Text('Войти'),
-                ),
-              )
-            ],
+                Center(
+                  child: CupertinoButton(
+                    onPressed: () {
+                      goToAdmin();
+                    },
+                    child: Text('Войти'),
+                  ),
+                )
+              ],
+            ),
           ),
-        ),
-      ],
-    ));
+        ],
+      ),
+    );
   }
 }
