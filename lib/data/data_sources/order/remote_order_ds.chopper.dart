@@ -29,7 +29,7 @@ final class _$RemoteOrderDataSource extends RemoteOrderDataSource {
   }
 
   @override
-  Future<Response<List<OrderModel>>> getByOrderId(String id) {
+  Future<Response<List<OrderModel>>> getById(String id) {
     final Uri $url = Uri.parse('Order/${id}');
     final Request $request = Request(
       'GET',
