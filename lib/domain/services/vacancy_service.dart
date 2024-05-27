@@ -25,9 +25,9 @@ class VacancyService extends AppService<RemoteVacancyDataSource>
   }
 
   @override
-  Future<List<VacancyModel>> fetch() {
-    // TODO: implement fetch
-    throw UnimplementedError();
+  Future<List<VacancyModel>> fetch() async {
+    final res = await rds.fetch();
+    return res.body ?? [];
   }
 
   @override
@@ -37,9 +37,10 @@ class VacancyService extends AppService<RemoteVacancyDataSource>
   }
 
   @override
-  Future<VacancyModel?> getById(String id) {
-    // TODO: implement getById
-    throw UnimplementedError();
+  Future<VacancyModel?> getById(String id) async {
+    final res = await rds.getById(id);
+    return null;
+    /*return res.body;*/
   }
 
   @override
@@ -49,8 +50,7 @@ class VacancyService extends AppService<RemoteVacancyDataSource>
   }
 
   @override
-  Future<void> patch(VacancyDto dto) {
-    // TODO: implement patch
-    throw UnimplementedError();
+  Future<void> patch(VacancyDto dto) async {
+    await rds.edit(dto);
   }
 }
