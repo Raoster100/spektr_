@@ -29,7 +29,7 @@ final class _$RemoteVacancyDataSource extends RemoteVacancyDataSource {
   }
 
   @override
-  Future<Response<List<VacancyModel>>> getByVacancyId(String id) {
+  Future<Response<List<VacancyModel>>> getById(String id) {
     final Uri $url = Uri.parse('Vacancy/${id}');
     final Request $request = Request(
       'GET',
