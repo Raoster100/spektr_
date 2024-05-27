@@ -15,7 +15,7 @@ abstract class RemoteOrderDataSource extends ChopperService
   Future<Response<List<OrderModel>>> fetch();
 
   @Get(path: r'/{id}')
-  Future<Response<List<OrderModel>>> getByOrderId(@Path() final String id);
+  Future<Response<List<OrderModel>>> getById(@Path() final String id);
 
   @Post()
   Future<Response<dynamic>> add(@Body() final OrderDto dto);
