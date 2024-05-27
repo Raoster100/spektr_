@@ -25,9 +25,9 @@ class RentService extends AppService<RemoteRentDataSource>
   }
 
   @override
-  Future<List<RentModel>> fetch() {
-    // TODO: implement fetch
-    throw UnimplementedError();
+  Future<List<RentModel>> fetch() async {
+    final res = await rds.fetch();
+    return res.body ?? [];
   }
 
   @override
@@ -37,9 +37,10 @@ class RentService extends AppService<RemoteRentDataSource>
   }
 
   @override
-  Future<RentModel?> getById(String id) {
-    // TODO: implement getById
-    throw UnimplementedError();
+  Future<RentModel?> getById(String id) async {
+    final res = await rds.getById(id);
+    return null;
+    /*return res.body;*/
   }
 
   @override
@@ -49,8 +50,7 @@ class RentService extends AppService<RemoteRentDataSource>
   }
 
   @override
-  Future<void> patch(RentDto dto) {
-    // TODO: implement patch
-    throw UnimplementedError();
+  Future<void> patch(RentDto dto) async {
+    await rds.edit(dto);
   }
 }
