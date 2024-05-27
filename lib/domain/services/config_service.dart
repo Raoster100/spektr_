@@ -25,21 +25,17 @@ class ConfigService extends AppService<RemoteConfigDataSource>
   }
 
   @override
-  Future<List<ConfigModel>> fetch() {
-    // TODO: implement fetch
-    throw UnimplementedError();
+  Future<List<ConfigModel>> fetch() async {
+    final res = await rds.fetch();
+    return res.body ?? [];
   }
 
-  @override
-  Future<List<ConfigModel>> fetchById(String id) {
-    // TODO: implement fetchById
-    throw UnimplementedError();
-  }
 
   @override
-  Future<ConfigModel?> getById(String id) {
-    // TODO: implement getById
-    throw UnimplementedError();
+  Future<ConfigModel?> getById(String id) async {
+    final res = await rds.getById(id);
+    return null;
+    /*return res.body;*/
   }
 
   @override
@@ -49,8 +45,13 @@ class ConfigService extends AppService<RemoteConfigDataSource>
   }
 
   @override
-  Future<void> patch(ConfigDto dto) {
-    // TODO: implement patch
+  Future<void> patch(ConfigDto dto) async {
+    await rds.edit(dto);
+  }
+
+  @override
+  Future<List<ConfigModel>> fetchById(String id) {
+    // TODO: implement fetchById
     throw UnimplementedError();
   }
 }
