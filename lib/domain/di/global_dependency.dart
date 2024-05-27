@@ -1,33 +1,32 @@
-/*
-
-
 import 'package:chopper/chopper.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:spektr/domain/di/core/app_async_dependency.dart';
+import '../../data/converters/json_mappable_converter.dart';
+import '../../data/data_sources/upload/web_upload_ds.dart';
+import '../services/upload_service.dart';
 
 class GlobalDependency extends AppAsyncDependency {
   GlobalDependency(super.context);
 
+  late final UploadService _uploadService;
+  late final ChopperClient _chopper;
+
   @override
   Future<void> init(BuildContext context) async {
     final uploadWds = WebUploadDataSource();
-    _errorService = ErrorService(context);
-    _uploadService = UploadService(uploadWds, _errorService);
-    _authService.init(context);
+    _uploadService = UploadService(uploadWds);
+    _chopper = ChopperClient(
+      baseUrl: Uri.parse('https://spectre.sbeusilent.space/'),
+      converter: JsonMappableConverter(),
+      errorConverter: JsonMappableConverter(),
+    );
   }
 
-  final ChopperClient _chopper = ChopperClient(
-    baseUrl: 'https://spectre.sbeusilent.space/',
-    converter: JsonMappableConverter(),
-    errorConverter: JsonMappableConverter(),
-  );
-
-  late final ErrorService _errorService;
-  late final UploadService _uploadService;
-
-  ErrorService get errorService => _errorService;
   UploadService get uploadService => _uploadService;
   ChopperClient get chopper => _chopper;
-  
+
+  @override
+  void dispose() {
+    _chopper.dispose();
+  }
 }
-*/
