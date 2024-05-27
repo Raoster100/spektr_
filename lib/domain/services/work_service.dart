@@ -26,9 +26,9 @@ class WorkService extends AppService<RemoteWorkDataSource>
   }
 
   @override
-  Future<List<WorkModel>> fetch() {
-    // TODO: implement fetch
-    throw UnimplementedError();
+  Future<List<WorkModel>> fetch() async {
+    final res = await rds.fetch();
+    return res.body ?? [];
   }
 
   @override
@@ -38,9 +38,10 @@ class WorkService extends AppService<RemoteWorkDataSource>
   }
 
   @override
-  Future<WorkModel?> getById(String id) {
-    // TODO: implement getById
-    throw UnimplementedError();
+  Future<WorkModel?> getById(String id) async {
+    final res = await rds.getById(id);
+    return null;
+    /*return res.body;*/
   }
 
   @override
@@ -50,8 +51,7 @@ class WorkService extends AppService<RemoteWorkDataSource>
   }
 
   @override
-  Future<void> patch(WorkDto dto) {
-    // TODO: implement patch
-    throw UnimplementedError();
+  Future<void> patch(WorkDto dto) async {
+    await rds.edit(dto);
   }
 }
