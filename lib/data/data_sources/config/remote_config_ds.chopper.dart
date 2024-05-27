@@ -29,7 +29,7 @@ final class _$RemoteConfigDataSource extends RemoteConfigDataSource {
   }
 
   @override
-  Future<Response<List<ConfigModel>>> getByConfigId(String id) {
+  Future<Response<List<ConfigModel>>> getById(String id) {
     final Uri $url = Uri.parse('Config/${id}');
     final Request $request = Request(
       'GET',
