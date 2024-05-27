@@ -29,7 +29,7 @@ final class _$RemoteRentDataSource extends RemoteRentDataSource {
   }
 
   @override
-  Future<Response<List<RentModel>>> getByRentId(String id) {
+  Future<Response<List<RentModel>>> getById(String id) {
     final Uri $url = Uri.parse('Rent/${id}');
     final Request $request = Request(
       'GET',
