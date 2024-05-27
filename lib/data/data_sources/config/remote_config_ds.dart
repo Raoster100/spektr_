@@ -15,7 +15,7 @@ abstract class RemoteConfigDataSource extends ChopperService
   Future<Response<List<ConfigModel>>> fetch();
 
   @Get(path: r'/{id}')
-  Future<Response<List<ConfigModel>>> getByConfigId(@Path() final String id);
+  Future<Response<List<ConfigModel>>> getById(@Path() final String id);
 
   @Post()
   Future<Response<dynamic>> add(@Body() final ConfigDto dto);
