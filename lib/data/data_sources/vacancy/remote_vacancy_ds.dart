@@ -15,7 +15,7 @@ abstract class RemoteVacancyDataSource extends ChopperService
   Future<Response<List<VacancyModel>>> fetch();
 
   @Get(path: r'/{id}')
-  Future<Response<List<VacancyModel>>> getByVacancyId(@Path() final String id);
+  Future<Response<List<VacancyModel>>> getById(@Path() final String id);
 
   @Post()
   Future<Response<dynamic>> add(@Body() final VacancyDto dto);
