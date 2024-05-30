@@ -29,7 +29,7 @@ final class _$RemoteWorkDataSource extends RemoteWorkDataSource {
   }
 
   @override
-  Future<Response<List<WorkModel>>> getById(String id) {
+  Future<Response<List<WorkModel>>> getById(int id) {
     final Uri $url = Uri.parse('Work/${id}');
     final Request $request = Request(
       'GET',
@@ -66,7 +66,7 @@ final class _$RemoteWorkDataSource extends RemoteWorkDataSource {
   }
 
   @override
-  Future<Response<dynamic>> delete(String id) {
+  Future<Response<dynamic>> delete(int id) {
     final Uri $url = Uri.parse('Work');
     final Request $request = Request(
       'DELETE',
