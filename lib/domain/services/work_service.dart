@@ -4,7 +4,6 @@ import 'package:spektr/data/models/models.dart';
 import 'package:spektr/data/models/work/work_dto.dart';
 import 'package:spektr/domain/services/core/app_service.dart';
 import 'package:spektr/domain/services/core/repo_mixin.dart';
-import '../../data/data_sources/core/app_remote_ds.dart';
 
 class WorkService extends AppService<RemoteWorkDataSource>
     with RepoStyleMixin<WorkDto, WorkModel> {
@@ -17,7 +16,7 @@ class WorkService extends AppService<RemoteWorkDataSource>
 
   @override
   Future<void> delete(WorkDto dto) async {
-
+    rds.delete(dto.id);
   }
 
   @override
@@ -39,9 +38,9 @@ class WorkService extends AppService<RemoteWorkDataSource>
 
   @override
   Future<WorkModel?> getById(String id) async {
-    final res = await rds.getById(id);
+    final res = await rds.getById(id as int);
     return null;
-    /*return res.body;*/
+    // return res.body;
   }
 
   @override
