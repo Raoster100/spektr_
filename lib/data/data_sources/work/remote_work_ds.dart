@@ -15,7 +15,7 @@ abstract class RemoteWorkDataSource extends ChopperService
   Future<Response<List<WorkModel>>> fetch();
 
   @Get(path: r'/{id}')
-  Future<Response<List<WorkModel>>> getById(@Path('id') final int id);
+  Future<Response<WorkModel>> getById(@Path('id') final int id);
 
   @Post()
   Future<Response<dynamic>> add(@Body() final WorkDto dto);
