@@ -39,8 +39,7 @@ class RentService extends AppService<RemoteRentDataSource>
   @override
   Future<RentModel?> getById(String id) async {
     final res = await rds.getById(id);
-    return null;
-    /*return res.body;*/
+    return res.body;
   }
 
   @override

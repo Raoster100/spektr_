@@ -39,8 +39,7 @@ class VacancyService extends AppService<RemoteVacancyDataSource>
   @override
   Future<VacancyModel?> getById(String id) async {
     final res = await rds.getById(id);
-    return null;
-    /*return res.body;*/
+    return res.body;
   }
 
   @override

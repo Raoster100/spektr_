@@ -39,8 +39,7 @@ class OrderService extends AppService<RemoteOrderDataSource>
   @override
   Future<OrderModel?> getById(String id) async {
     final res = await rds.getById(id);
-    return null;
-    /*return res.body;*/
+    return res.body;
   }
 
   @override

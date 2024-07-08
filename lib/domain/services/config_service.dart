@@ -34,8 +34,7 @@ class ConfigService extends AppService<RemoteConfigDataSource>
   @override
   Future<ConfigModel?> getById(String id) async {
     final res = await rds.getById(id);
-    return null;
-    /*return res.body;*/
+    return res.body;
   }
 
   @override

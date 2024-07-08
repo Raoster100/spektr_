@@ -39,8 +39,7 @@ class WorkService extends AppService<RemoteWorkDataSource>
   @override
   Future<WorkModel?> getById(String id) async {
     final res = await rds.getById(id as int);
-    return null;
-    // return res.body;
+    return res.body;
   }
 
   @override
