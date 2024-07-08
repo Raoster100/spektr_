@@ -15,7 +15,7 @@ abstract class RemoteRentDataSource extends ChopperService
   Future<Response<List<RentModel>>> fetch();
 
   @Get(path: r'/{id}')
-  Future<Response<List<RentModel>>> getById(@Path() final String id);
+  Future<Response<RentModel>> getById(@Path() final String id);
 
   @Post()
   Future<Response<dynamic>> add(@Body() final RentDto dto);
