@@ -29,14 +29,14 @@ final class _$RemoteWorkDataSource extends RemoteWorkDataSource {
   }
 
   @override
-  Future<Response<List<WorkModel>>> getById(int id) {
+  Future<Response<WorkModel>> getById(int id) {
     final Uri $url = Uri.parse('Work/${id}');
     final Request $request = Request(
       'GET',
       $url,
       client.baseUrl,
     );
-    return client.send<List<WorkModel>, WorkModel>($request);
+    return client.send<WorkModel, WorkModel>($request);
   }
 
   @override
