@@ -44,6 +44,7 @@ class VacancyCardWidget extends StatelessWidget {
               child: Text(
                 lenght ?? 'Описание вакансии в котором будет что то написано',
                 style: AppTypography.inter.black.s16.w600,
+
               ),
             ),
             /*SizedBox(height: 22),
