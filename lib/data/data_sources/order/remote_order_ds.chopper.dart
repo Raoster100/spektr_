@@ -66,7 +66,7 @@ final class _$RemoteOrderDataSource extends RemoteOrderDataSource {
   }
 
   @override
-  Future<Response<dynamic>> delete(String id) {
+  Future<Response<dynamic>> delete(int id) {
     final Uri $url = Uri.parse('Order');
     final Request $request = Request(
       'DELETE',
