@@ -24,5 +24,5 @@ abstract class RemoteConfigDataSource extends ChopperService
   Future<Response<dynamic>> edit(@Body() final ConfigDto dto);
 
   @Delete()
-  Future<Response<dynamic>> delete(@Path() final String id);
+  Future<Response<dynamic>> delete(@Path() final int id);
 }
