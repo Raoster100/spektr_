@@ -16,7 +16,7 @@ class RentService extends AppService<RemoteRentDataSource>
 
   @override
   Future<void> delete(RentDto dto) async {
-
+    rds.delete(dto.id);
   }
 
   @override
