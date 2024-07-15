@@ -66,7 +66,7 @@ final class _$RemoteRentDataSource extends RemoteRentDataSource {
   }
 
   @override
-  Future<Response<dynamic>> delete(String id) {
+  Future<Response<dynamic>> delete(int id) {
     final Uri $url = Uri.parse('Rent');
     final Request $request = Request(
       'DELETE',
