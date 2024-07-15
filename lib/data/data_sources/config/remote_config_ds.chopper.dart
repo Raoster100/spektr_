@@ -66,7 +66,7 @@ final class _$RemoteConfigDataSource extends RemoteConfigDataSource {
   }
 
   @override
-  Future<Response<dynamic>> delete(String id) {
+  Future<Response<dynamic>> delete(int id) {
     final Uri $url = Uri.parse('Config');
     final Request $request = Request(
       'DELETE',
