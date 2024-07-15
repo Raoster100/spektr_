@@ -24,5 +24,5 @@ abstract class RemoteVacancyDataSource extends ChopperService
   Future<Response<dynamic>> edit(@Body() final VacancyDto dto);
 
   @Delete()
-  Future<Response<dynamic>> delete(@Path() final String id);
+  Future<Response<dynamic>> delete(@Path() final int id);
 }
