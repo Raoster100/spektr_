@@ -16,7 +16,7 @@ class OrderService extends AppService<RemoteOrderDataSource>
 
   @override
   Future<void> delete(OrderDto dto) async {
-
+    rds.delete(dto.id);
   }
 
   @override
