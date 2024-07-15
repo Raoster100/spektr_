@@ -19,10 +19,7 @@ class ConfigService extends AppService<RemoteConfigDataSource>
 
   }
 
-  @override
-  void dispose() {
-    // TODO: implement dispose
-  }
+
 
   @override
   Future<List<ConfigModel>> fetch() async {
@@ -52,5 +49,10 @@ class ConfigService extends AppService<RemoteConfigDataSource>
   Future<List<ConfigModel>> fetchById(String id) {
     // TODO: implement fetchById
     throw UnimplementedError();
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
   }
 }
