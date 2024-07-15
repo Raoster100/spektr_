@@ -16,7 +16,7 @@ class VacancyService extends AppService<RemoteVacancyDataSource>
 
   @override
   Future<void> delete(VacancyDto dto) async {
-
+    rds.delete(dto.id);
   }
 
   @override
