@@ -1,7 +1,6 @@
 import 'dart:io';
 import 'package:chopper/chopper.dart';
 import 'package:flutter/material.dart';
-import 'package:kiwi/kiwi.dart';
 import 'package:spektr/app/app.dart';
 import 'package:spektr/data/data_sources/config/remote_config_ds.dart';
 import 'package:spektr/data/data_sources/core/app_remote_ds.dart';
