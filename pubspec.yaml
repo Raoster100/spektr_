@@ -51,7 +51,6 @@ dependencies:
   provider: ^6.1.2
   dart_mappable: ^4.2.2
   stacked: ^3.4.3
-  kiwi: ^5.0.0
 
 
 
