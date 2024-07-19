@@ -20,8 +20,8 @@ class ConfigDtoMapper extends ClassMapperBase<ConfigDto> {
   @override
   final String id = 'ConfigDto';
 
-  static int? _$id(ConfigDto v) => v.id;
-  static const Field<ConfigDto, int> _f$id = Field('id', _$id, opt: true);
+  static int _$id(ConfigDto v) => v.id;
+  static const Field<ConfigDto, int> _f$id = Field('id', _$id);
   static String? _$address(ConfigDto v) => v.address;
   static const Field<ConfigDto, String> _f$address =
       Field('address', _$address, opt: true);
@@ -122,13 +122,13 @@ class _ConfigDtoCopyWithImpl<$R, $Out>
       ConfigDtoMapper.ensureInitialized();
   @override
   $R call(
-          {Object? id = $none,
+          {int? id,
           Object? address = $none,
           Object? phone = $none,
           Object? longitude = $none,
           Object? latitude = $none}) =>
       $apply(FieldCopyWithData({
-        if (id != $none) #id: id,
+        if (id != null) #id: id,
         if (address != $none) #address: address,
         if (phone != $none) #phone: phone,
         if (longitude != $none) #longitude: longitude,
