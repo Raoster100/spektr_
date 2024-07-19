@@ -1,7 +1,6 @@
 import 'dart:js_interop_unsafe';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:spektr/data/data_sources/config/remote_config_ds.dart';
-import 'package:kiwi/kiwi.dart';
 import 'package:spektr/data/models/models.dart';
 import 'package:spektr/domain/services/core/app_service.dart';
 import 'package:spektr/domain/services/core/repo_mixin.dart';
