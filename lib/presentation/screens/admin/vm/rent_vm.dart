@@ -16,7 +16,7 @@ class RentViewModel extends BaseViewModel {
 
 
 
-  Future<void> fetch() async {
+  Future<void> fetchRent() async {
     await rentService.fetch();
     notifyListeners();
   }
