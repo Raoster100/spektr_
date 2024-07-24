@@ -1,7 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:spektr/data/models/work/work_dto.dart';
+import 'package:spektr/domain/services/work_service.dart';
 
+late final WorkService workService;
 
 class WorkDialog extends StatefulWidget {
   const WorkDialog({
@@ -17,12 +20,11 @@ class _WorkDialogState extends State<WorkDialog> {
   final descriptionController = TextEditingController();
   final priceController = TextEditingController();
 
- /* _addWork() async {
-    HiveService().putWork(Work(
+  Future<void> addWork() async {
+    await workService.add(WorkDto(
         name: nameController.text,
-        price: priceController.text,
-        description: descriptionController.text));
-  }*/
+        price: int.tryParse(priceController.text) ?? 0));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -58,7 +60,7 @@ class _WorkDialogState extends State<WorkDialog> {
                     ),
                   ),
                   CupertinoButton(
-                      child: Text('Добавить работу'), onPressed: /*_addWork*/null),
+                      child: Text('Добавить работу'), onPressed: addWork),
                   CupertinoButton(
                       child: Text('Отменить'),
                       onPressed: Navigator.of(context).pop)
