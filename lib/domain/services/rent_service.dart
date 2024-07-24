@@ -13,7 +13,7 @@ class RentService extends AppService<RemoteRentDataSource>
 
   @override
   Future<void> add(RentDto dto) async {
-    final res = await rds.add(dto);
+    await rds.add(dto);
   }
 
   @override
