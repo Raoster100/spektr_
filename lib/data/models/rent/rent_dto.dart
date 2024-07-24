@@ -5,13 +5,13 @@ part 'rent_dto.mapper.dart';
 @MappableClass()
 class RentDto with RentDtoMappable {
   RentDto({
-    required this.id,
+    this.id,
     required this.name,
     required this.price,
     this.description,
     this.image
   });
-  final int id;
+  final int? id;
   final String name;
   final int price;
   final String? description;
