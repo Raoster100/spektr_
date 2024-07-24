@@ -1,6 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:spektr/data/models/vacancy/vacancy_dto.dart';
+import 'package:spektr/domain/services/vacancy_service.dart';
+
+late final VacancyService vacancyService;
 
 class VacancyDialog extends StatefulWidget {
   const VacancyDialog({
@@ -16,12 +20,11 @@ class _VacancyDialogState extends State<VacancyDialog> {
   final descriptionController = TextEditingController();
   final priceController = TextEditingController();
 
-/*  _addVacancy() async {
-    HiveService().putVacancy(Vacancy(
+  Future<void> addVacancy() async {
+    await vacancyService.add(VacancyDto(
         name: nameController.text,
-        price: priceController.text,
-        description: descriptionController.text));
-  }*/
+        price: int.tryParse(priceController.text) ?? 0));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +60,7 @@ class _VacancyDialogState extends State<VacancyDialog> {
                     ),
                   ),
                   CupertinoButton(
-                      child: Text('Добавить вакансию'), onPressed: /*_addVacancy*/null),
+                      child: Text('Добавить вакансию'), onPressed: addVacancy),
                   CupertinoButton(
                       child: Text('Отменить'),
                       onPressed: Navigator.of(context).pop)
