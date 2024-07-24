@@ -1,33 +1,19 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:spektr/data/models/work/work_dto.dart';
 import 'package:spektr/domain/services/work_service.dart';
+import 'package:spektr/presentation/screens/admin/vm/work_vm.dart';
+import 'package:stacked/stacked.dart';
 
 late final WorkService workService;
 
-class WorkDialog extends StatefulWidget {
+class WorkDialog extends StackedView<WorkViewModel> {
   const WorkDialog({
     super.key,
   });
 
   @override
-  State<WorkDialog> createState() => _WorkDialogState();
-}
-
-class _WorkDialogState extends State<WorkDialog> {
-  final nameController = TextEditingController();
-  final descriptionController = TextEditingController();
-  final priceController = TextEditingController();
-
-  Future<void> addWork() async {
-    await workService.add(WorkDto(
-        name: nameController.text,
-        price: int.tryParse(priceController.text) ?? 0));
-  }
-
-  @override
-  Widget build(BuildContext context) {
+  Widget builder(BuildContext context, WorkViewModel viewModel, Widget? child) {
     return Dialog(
       child: SizedBox(
         width: 900,
@@ -42,25 +28,26 @@ class _WorkDialogState extends State<WorkDialog> {
                     width: 300,
                     child: TextFormField(
                       decoration: InputDecoration(hintText: 'Название'),
-                      controller: nameController,
+                      controller: viewModel.nameController,
                     ),
                   ),
                   SizedBox(
                     width: 300,
                     child: TextFormField(
                       decoration: InputDecoration(hintText: 'Описание'),
-                      controller: descriptionController,
+                      controller: viewModel.descriptionController,
                     ),
                   ),
                   SizedBox(
                     width: 300,
                     child: TextFormField(
                       decoration: InputDecoration(hintText: 'Цена'),
-                      controller: priceController,
+                      controller: viewModel.priceController,
                     ),
                   ),
                   CupertinoButton(
-                      child: Text('Добавить работу'), onPressed: addWork),
+                      child: Text('Добавить работу'),
+                      onPressed: viewModel.addWork),
                   CupertinoButton(
                       child: Text('Отменить'),
                       onPressed: Navigator.of(context).pop)
@@ -71,5 +58,10 @@ class _WorkDialogState extends State<WorkDialog> {
         ),
       ),
     );
+  }
+
+  @override
+  WorkViewModel viewModelBuilder(BuildContext context) {
+    return WorkViewModel(workService);
   }
 }
