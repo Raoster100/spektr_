@@ -1,11 +1,8 @@
-import 'dart:typed_data';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:file_picker/file_picker.dart';
-import 'package:spektr/data/models/rent/rent_dto.dart';
 import 'package:spektr/domain/services/rent_service.dart';
-import 'package:spektr/navigation/app_router.dart';
 import 'package:spektr/presentation/screens/admin/vm/rent_vm.dart';
 import 'package:stacked/stacked.dart';
 
