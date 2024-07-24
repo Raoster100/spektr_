@@ -20,8 +20,8 @@ class OrderDtoMapper extends ClassMapperBase<OrderDto> {
   @override
   final String id = 'OrderDto';
 
-  static int _$id(OrderDto v) => v.id;
-  static const Field<OrderDto, int> _f$id = Field('id', _$id);
+  static int? _$id(OrderDto v) => v.id;
+  static const Field<OrderDto, int> _f$id = Field('id', _$id, opt: true);
   static String _$name(OrderDto v) => v.name;
   static const Field<OrderDto, String> _f$name = Field('name', _$name);
   static String _$phone(OrderDto v) => v.phone;
@@ -114,13 +114,13 @@ class _OrderDtoCopyWithImpl<$R, $Out>
       OrderDtoMapper.ensureInitialized();
   @override
   $R call(
-          {int? id,
+          {Object? id = $none,
           String? name,
           String? phone,
           Object? type = $none,
           Object? hours = $none}) =>
       $apply(FieldCopyWithData({
-        if (id != null) #id: id,
+        if (id != $none) #id: id,
         if (name != null) #name: name,
         if (phone != null) #phone: phone,
         if (type != $none) #type: type,
