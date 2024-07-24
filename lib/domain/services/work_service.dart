@@ -16,7 +16,9 @@ class WorkService extends AppService<RemoteWorkDataSource>
 
   @override
   Future<void> delete(WorkDto dto) async {
-    rds.delete(dto.id);
+    final res = dto.id;
+    if (res == null) return;
+    rds.delete(res);
   }
 
   @override
