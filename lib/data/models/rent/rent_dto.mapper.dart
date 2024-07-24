@@ -20,8 +20,8 @@ class RentDtoMapper extends ClassMapperBase<RentDto> {
   @override
   final String id = 'RentDto';
 
-  static int _$id(RentDto v) => v.id;
-  static const Field<RentDto, int> _f$id = Field('id', _$id);
+  static int? _$id(RentDto v) => v.id;
+  static const Field<RentDto, int> _f$id = Field('id', _$id, opt: true);
   static String _$name(RentDto v) => v.name;
   static const Field<RentDto, String> _f$name = Field('name', _$name);
   static int _$price(RentDto v) => v.price;
@@ -119,13 +119,13 @@ class _RentDtoCopyWithImpl<$R, $Out>
       RentDtoMapper.ensureInitialized();
   @override
   $R call(
-          {int? id,
+          {Object? id = $none,
           String? name,
           int? price,
           Object? description = $none,
           Object? image = $none}) =>
       $apply(FieldCopyWithData({
-        if (id != null) #id: id,
+        if (id != $none) #id: id,
         if (name != null) #name: name,
         if (price != null) #price: price,
         if (description != $none) #description: description,
