@@ -11,7 +11,7 @@ class VacancyService extends AppService<RemoteVacancyDataSource>
 
   @override
   Future<void> add(VacancyDto dto) async {
-    final res = await rds.add(dto);
+    await rds.add(dto);
   }
 
   @override
