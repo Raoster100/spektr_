@@ -20,8 +20,8 @@ class WorkDtoMapper extends ClassMapperBase<WorkDto> {
   @override
   final String id = 'WorkDto';
 
-  static int _$id(WorkDto v) => v.id;
-  static const Field<WorkDto, int> _f$id = Field('id', _$id);
+  static int? _$id(WorkDto v) => v.id;
+  static const Field<WorkDto, int> _f$id = Field('id', _$id, opt: true);
   static String _$name(WorkDto v) => v.name;
   static const Field<WorkDto, String> _f$name = Field('name', _$name);
   static int _$price(WorkDto v) => v.price;
@@ -108,9 +108,13 @@ class _WorkDtoCopyWithImpl<$R, $Out>
   late final ClassMapperBase<WorkDto> $mapper =
       WorkDtoMapper.ensureInitialized();
   @override
-  $R call({int? id, String? name, int? price, Object? description = $none}) =>
+  $R call(
+          {Object? id = $none,
+          String? name,
+          int? price,
+          Object? description = $none}) =>
       $apply(FieldCopyWithData({
-        if (id != null) #id: id,
+        if (id != $none) #id: id,
         if (name != null) #name: name,
         if (price != null) #price: price,
         if (description != $none) #description: description
