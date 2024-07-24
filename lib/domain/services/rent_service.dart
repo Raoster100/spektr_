@@ -1,3 +1,5 @@
+import 'dart:js_interop';
+
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:spektr/data/data_sources/rent/remote_rent_ds.dart';
 import 'package:spektr/data/models/models.dart';
@@ -16,7 +18,9 @@ class RentService extends AppService<RemoteRentDataSource>
 
   @override
   Future<void> delete(RentDto dto) async {
-    rds.delete(dto.id);
+    final res = dto.id;
+    if (res == null) return;
+    rds.delete(res);
   }
 
   @override
