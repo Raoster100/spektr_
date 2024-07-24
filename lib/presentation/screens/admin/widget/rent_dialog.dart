@@ -6,34 +6,19 @@ import 'package:file_picker/file_picker.dart';
 import 'package:spektr/data/models/rent/rent_dto.dart';
 import 'package:spektr/domain/services/rent_service.dart';
 import 'package:spektr/navigation/app_router.dart';
+import 'package:spektr/presentation/screens/admin/vm/rent_vm.dart';
+import 'package:stacked/stacked.dart';
 
-late final RentService rentService;
-
-class RentDialog extends StatefulWidget {
-  const RentDialog({
+class RentDialog extends StackedView<RentViewModel> {
+  const RentDialog(
+    this.rentService, {
     super.key,
   });
 
-  @override
-  State<RentDialog> createState() => _RentDialogState();
-}
-
-class _RentDialogState extends State<RentDialog> {
-  final nameController = TextEditingController();
-  final descriptionController = TextEditingController();
-  final priceController = TextEditingController();
-  Uint8List? pickedImage;
-
-  Future<void> fetchRent() async {
-    final res = await rentService.fetch();
-  }
-  
-  Future<void> addRent() async {
-    await rentService.add(RentDto(name: nameController.text, price: int.tryParse(priceController.text) ?? 0));
-  }
+  final RentService rentService;
 
   @override
-  Widget build(BuildContext context) {
+  Widget builder(BuildContext context, RentViewModel viewModel, Widget? child) {
     return Dialog(
       child: SizedBox(
         width: 900,
@@ -48,24 +33,25 @@ class _RentDialogState extends State<RentDialog> {
                     width: 300,
                     child: TextFormField(
                       decoration: InputDecoration(hintText: 'Название'),
-                      controller: nameController,
+                      controller: viewModel.nameController,
                     ),
                   ),
                   SizedBox(
                     width: 300,
                     child: TextFormField(
                       decoration: InputDecoration(hintText: 'Описание'),
-                      controller: descriptionController,
+                      controller: viewModel.descriptionController,
                     ),
                   ),
                   SizedBox(
                     width: 300,
                     child: TextFormField(
                       decoration: InputDecoration(hintText: 'Цена'),
-                      controller: priceController,
+                      controller: viewModel.priceController,
                     ),
                   ),
-                  if (pickedImage != null) Image.memory(pickedImage!),
+                  if (viewModel.pickedImage != null)
+                    Image.memory(viewModel.pickedImage!),
                   SizedBox(
                     width: 300,
                     child: CupertinoButton(
@@ -75,13 +61,13 @@ class _RentDialogState extends State<RentDialog> {
                             .pickFiles(type: FileType.image);
                         if (res == null) return;
                         if (res.files.isEmpty) return;
-                        pickedImage = res.files.first.bytes;
-                        setState(() {});
+                        viewModel.pickedImage = res.files.first.bytes;
                       },
                     ),
                   ),
                   CupertinoButton(
-                      child: Text('Добавить аренду'), onPressed: addRent),
+                      child: Text('Добавить аренду'),
+                      onPressed: viewModel.addRent),
                   CupertinoButton(
                       child: Text('Отменить'),
                       onPressed: Navigator.of(context).pop)
@@ -92,5 +78,10 @@ class _RentDialogState extends State<RentDialog> {
         ),
       ),
     );
+  }
+
+  @override
+  RentViewModel viewModelBuilder(BuildContext context) {
+    return RentViewModel(rentService);
   }
 }
