@@ -11,12 +11,14 @@ class OrderService extends AppService<RemoteOrderDataSource>
 
   @override
   Future<void> add(OrderDto dto) async {
-    final res = await rds.add(dto);
+    await rds.add(dto);
   }
 
   @override
   Future<void> delete(OrderDto dto) async {
-    rds.delete(dto.id);
+    final res = dto.id;
+    if (res == null) return;
+    rds.delete(res);
   }
 
   @override
