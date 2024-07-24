@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:spektr/data/models/order/order_dto.dart';
 import 'package:spektr/domain/services/order_service.dart';
 import 'package:stacked/stacked.dart';
 import '../../../../data/models/order/order_model.dart';
@@ -18,6 +19,9 @@ class OrderViewModel extends BaseViewModel {
   Future<void> fetch() async {
     orders = await orderService.fetch();
     notifyListeners();
+  }
+  Future<void> addOrder() async {
+    await orderService.add(OrderDto(name: nameController.text, phone: phoneController.text));
   }
 
   void dispose() {
