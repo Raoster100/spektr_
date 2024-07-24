@@ -6,16 +6,15 @@ import 'package:spektr/presentation/screens/admin/vm/order_vm.dart';
 import 'package:stacked/stacked.dart';
 
 class OrderDialog extends StackedView<OrderViewModel> {
-  const OrderDialog(
-    this.orderService, {
+  const OrderDialog(this.orderService, {
     super.key,
   });
 
   final OrderService orderService;
 
   @override
-  Widget builder(
-      BuildContext context, OrderViewModel viewModel, Widget? child) {
+  Widget builder(BuildContext context, OrderViewModel viewModel,
+      Widget? child) {
     return Dialog(
       child: SizedBox(
         width: 900,
@@ -47,24 +46,27 @@ class OrderDialog extends StackedView<OrderViewModel> {
                       controller: viewModel.hoursController,
                     ),
                   ),
-/*                  SizedBox(
+                  SizedBox(
                     width: 300,
-                    child: DropdownButton<String>(
-                      value: selectedItem,
-                      items: items
-                          .map((item) => DropdownMenuItem<String>(
-                          child: Text(item), value: item))
+                    /*child: DropdownButton<String>(
+                      value: viewModel.selectedItem,
+                      items: viewModel.items
+                          .map((item) =>
+                          DropdownMenuItem<String>(
+                              child: Text(item), value: item))
                           .toList(),
                       onChanged: (item) => setState(() => selectedItem = item),
-                    ),
-                  ),*/
-                  /*         CupertinoButton(
+                    ),*/
+                  ),
+                  CupertinoButton(
                       child: Text('Добавить заказ'), onPressed:
-_addOrder
-null),*/
+                  viewModel.addOrder
+                      ),
                   CupertinoButton(
                       child: Text('Отменить'),
-                      onPressed: Navigator.of(context).pop)
+                      onPressed: Navigator
+                          .of(context)
+                          .pop)
                 ],
               ),
             ),
