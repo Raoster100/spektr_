@@ -20,8 +20,8 @@ class VacancyDtoMapper extends ClassMapperBase<VacancyDto> {
   @override
   final String id = 'VacancyDto';
 
-  static int _$id(VacancyDto v) => v.id;
-  static const Field<VacancyDto, int> _f$id = Field('id', _$id);
+  static int? _$id(VacancyDto v) => v.id;
+  static const Field<VacancyDto, int> _f$id = Field('id', _$id, opt: true);
   static String _$name(VacancyDto v) => v.name;
   static const Field<VacancyDto, String> _f$name = Field('name', _$name);
   static int _$price(VacancyDto v) => v.price;
@@ -110,9 +110,13 @@ class _VacancyDtoCopyWithImpl<$R, $Out>
   late final ClassMapperBase<VacancyDto> $mapper =
       VacancyDtoMapper.ensureInitialized();
   @override
-  $R call({int? id, String? name, int? price, Object? description = $none}) =>
+  $R call(
+          {Object? id = $none,
+          String? name,
+          int? price,
+          Object? description = $none}) =>
       $apply(FieldCopyWithData({
-        if (id != null) #id: id,
+        if (id != $none) #id: id,
         if (name != null) #name: name,
         if (price != null) #price: price,
         if (description != $none) #description: description
