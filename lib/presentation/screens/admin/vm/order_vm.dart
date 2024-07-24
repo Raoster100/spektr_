@@ -16,7 +16,7 @@ class OrderViewModel extends BaseViewModel {
   List<String> items = ['Аренда', 'Услуга'];
   String? selectedItem = 'Аренда';
 
-  Future<void> fetch() async {
+  Future<void> fetchOrder() async {
     orders = await orderService.fetch();
     notifyListeners();
   }
