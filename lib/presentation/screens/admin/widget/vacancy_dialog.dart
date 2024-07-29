@@ -5,12 +5,13 @@ import 'package:spektr/domain/services/vacancy_service.dart';
 import 'package:spektr/presentation/screens/admin/vm/vacancy_vm.dart';
 import 'package:stacked/stacked.dart';
 
-late final VacancyService vacancyService;
 
 class VacancyDialog extends StackedView<VacancyViewModel> {
-  const VacancyDialog({
+  const VacancyDialog(this.vacancyService, {
     super.key,
   });
+
+  final VacancyService vacancyService;
 
   @override
   Widget builder(
