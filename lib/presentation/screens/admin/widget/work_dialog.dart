@@ -5,12 +5,13 @@ import 'package:spektr/domain/services/work_service.dart';
 import 'package:spektr/presentation/screens/admin/vm/work_vm.dart';
 import 'package:stacked/stacked.dart';
 
-late final WorkService workService;
-
 class WorkDialog extends StackedView<WorkViewModel> {
-  const WorkDialog({
+  const WorkDialog(
+    this.workService, {
     super.key,
   });
+
+  final WorkService workService;
 
   @override
   Widget builder(BuildContext context, WorkViewModel viewModel, Widget? child) {
