@@ -1,6 +1,11 @@
 // import 'package:flutter/cupertino.dart';
 // import 'package:flutter/material.dart';
 // import 'package:spektr/data/models/rent/rent_dto.dart';
+// import 'package:spektr/domain/services/config_service.dart';
+// import 'package:spektr/domain/services/order_service.dart';
+// import 'package:spektr/domain/services/rent_service.dart';
+// import 'package:spektr/domain/services/vacancy_service.dart';
+// import 'package:spektr/domain/services/work_service.dart';
 // import 'package:spektr/presentation/screens/admin/widget/order_dialog.dart';
 // import 'package:spektr/presentation/screens/admin/widget/rent_dialog.dart';
 // import 'package:spektr/presentation/screens/admin/widget/vacancy_dialog.dart';
@@ -10,7 +15,11 @@
 //
 // @RoutePage(name: 'admin')
 // class AdminView extends StatefulWidget {
-//   const AdminView({Key? key}) : super(key: key);
+//   const AdminView({Key? key, required this.rentService, required this.orderService, required this.workService, required this.vacancyService}) : super(key: key);
+//   final RentService rentService;
+//   final OrderService orderService;
+//   final WorkService workService;
+//   final VacancyService vacancyService;
 //
 //   @override
 //   State<AdminView> createState() => _AdminViewState();
@@ -27,7 +36,7 @@
 //             SingleChildScrollView(
 //               child: Center(
 //                 child: FutureBuilder<List<RentDto>>(
-//                   future: HiveService().getRentVehicle(),
+//                   future: RentService().fetch(),
 //                   builder: (context, snapshot) {
 //                     return DataTable(
 //                       columns: [
@@ -58,7 +67,7 @@
 //             SingleChildScrollView(
 //               child: Center(
 //                 child: FutureBuilder<List<Work>>(
-//                   future: HiveService().getWork(),
+//                   future: WorkService().getWork(),
 //                   builder: (context, snapshot) {
 //                     return DataTable(
 //                       columns: [
@@ -86,7 +95,7 @@
 //             SingleChildScrollView(
 //               child: Center(
 //                 child: FutureBuilder<List<Config>>(
-//                   future: HiveService().getConfig(),
+//                   future: ConfigService().getConfig(),
 //                   builder: (context, snapshot) {
 //                     return DataTable(
 //                       columns: [
@@ -114,7 +123,7 @@
 //             SingleChildScrollView(
 //               child: Center(
 //                 child: FutureBuilder<List<Order>>(
-//                   future: HiveService().getOrder(),
+//                   future: OrderService().getOrder(),
 //                   builder: (context, snapshot) {
 //                     return DataTable(
 //                       columns: [
@@ -144,7 +153,7 @@
 //             SingleChildScrollView(
 //               child: Center(
 //                 child: FutureBuilder<List<Vacancy>>(
-//                   future: HiveService().getVacancy(),
+//                   future: VacancyService().getVacancy(),
 //                   builder: (context, snapshot) {
 //                     return DataTable(
 //                       columns: [
