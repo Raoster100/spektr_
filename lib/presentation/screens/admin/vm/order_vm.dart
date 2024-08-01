@@ -23,6 +23,10 @@ class OrderViewModel extends BaseViewModel {
   Future<void> addOrder() async {
     await orderService.add(OrderDto(name: nameController.text, phone: phoneController.text));
   }
+  void selectItem(String? item) {
+    selectedItem = item;
+    notifyListeners();
+  }
 
   void dispose() {
     super.dispose();
