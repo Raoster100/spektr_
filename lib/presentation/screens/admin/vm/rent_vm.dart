@@ -13,11 +13,16 @@ class RentViewModel extends BaseViewModel {
   final priceController = TextEditingController();
   Uint8List? pickedImage;
   final RentService rentService;
-
+  String? selectedItem = 'Аренда';
 
 
   Future<void> fetchRent() async {
     await rentService.fetch();
+    notifyListeners();
+  }
+
+  void selectItem(String? item) {
+    selectedItem = item;
     notifyListeners();
   }
 
