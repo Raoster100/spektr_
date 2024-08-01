@@ -49,15 +49,15 @@ class OrderDialog extends StackedView<OrderViewModel> {
                   ),
                   SizedBox(
                     width: 300,
-                    /*child: DropdownButton<String>(
+                    child: DropdownButton<String>(
                       value: viewModel.selectedItem,
                       items: viewModel.items
                           .map((item) =>
                           DropdownMenuItem<String>(
                               child: Text(item), value: item))
                           .toList(),
-                      onChanged: (item) => setState(() => selectedItem = item),
-                    ),*/
+                      onChanged: viewModel.selectItem,
+                    ),
                   ),
                   CupertinoButton(
                       child: Text('Добавить заказ'),
