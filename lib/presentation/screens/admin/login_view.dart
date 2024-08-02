@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:spektr/domain/services/rent_service.dart';
 import 'package:spektr/navigation/app_router.dart';
 import 'package:spektr/presentation/theme/app_typography.dart';
 import 'package:auto_route/auto_route.dart';
@@ -20,7 +21,7 @@ class _LoginViewState extends State<LoginView> {
   void goToAdmin() {
     if (loginController.text == '123' && passwordController.text == '123') {
       App.isAuthorized = true;
-      /*App.router.navigate(Admin());*/
+      // App.router.navigate(Admin());
     }
   }
 
