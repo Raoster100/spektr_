@@ -1,6 +1,5 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:spektr/navigation/app_router.dart';
-
 import '../app/app.dart';
 
 class AuthGuard extends AutoRouteGuard {
