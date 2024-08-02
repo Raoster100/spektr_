@@ -1,5 +1,11 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:spektr/domain/services/config_service.dart';
+import 'package:spektr/domain/services/order_service.dart';
+import 'package:spektr/domain/services/rent_service.dart';
+import 'package:spektr/domain/services/work_service.dart';
 import 'package:spektr/utils/auth_guard.dart';
+import '../domain/services/vacancy_service.dart';
 import '../presentation/screens/about/about_view.dart';
 import '../presentation/screens/admin/admin_view.dart';
 import '../presentation/screens/admin/login_view.dart';
