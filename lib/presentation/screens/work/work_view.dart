@@ -1,6 +1,5 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:spektr/presentation/screens/vacancy/vacancy_card.dart';
 import 'package:spektr/presentation/screens/work/work_card.dart';
 import 'package:spektr/presentation/theme/app_typography.dart';
 
