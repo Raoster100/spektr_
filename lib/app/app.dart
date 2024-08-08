@@ -1,5 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:spektr/domain/di/core/app_async_dependency_widget.dart';
+import 'package:spektr/domain/di/global_dependency.dart';
 import 'package:spektr/navigation/app_router.dart';
 import 'package:sbeu_reactive_pattern/sbeu_reactive_pattern.dart';
 
@@ -21,17 +23,22 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      scrollBehavior: const MaterialScrollBehavior().copyWith(
-        dragDevices: {
-          PointerDeviceKind.mouse,
-          PointerDeviceKind.touch,
-          PointerDeviceKind.stylus,
-          PointerDeviceKind.unknown
-        },
+    return AppAsyncDependencyWidget<GlobalDependency>(
+      child: MaterialApp.router(
+        scrollBehavior: const MaterialScrollBehavior().copyWith(
+          dragDevices: {
+            PointerDeviceKind.mouse,
+            PointerDeviceKind.touch,
+            PointerDeviceKind.stylus,
+            PointerDeviceKind.unknown
+          },
+        ),
+        title: 'СпектрСвязьСтрой',
+        routerConfig: router.config(),
       ),
-      title: 'СпектрСвязьСтрой',
-      routerConfig: router.config(),
+      create: GlobalDependency.new,
+      dispose: (context, data) => data.dispose(),
+      loadingBuilder: (context) => CircularProgressIndicator(),
     );
   }
 }
