@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:spektr/data/models/models.dart';
 import 'package:spektr/data/models/rent/rent_dto.dart';
+import 'package:spektr/domain/di/global_dependency.dart';
 import 'package:spektr/domain/services/config_service.dart';
 import 'package:spektr/domain/services/order_service.dart';
 import 'package:spektr/domain/services/rent_service.dart';
@@ -18,14 +19,7 @@ import 'package:stacked/stacked.dart';
 
 @RoutePage(name: 'admin')
 class AdminView extends StackedView<AdminViewModel> {
-  const AdminView(this.rentService, this.orderService, this.workService, this.vacancyService, this.configService, {Key? key}) : super(key: key);
-  final RentService rentService;
-  final OrderService orderService;
-  final WorkService workService;
-  final VacancyService vacancyService;
-  final ConfigService configService;
-
-
+  const AdminView( {Key? key}) : super(key: key);
 
   @override
   Widget builder(BuildContext context, AdminViewModel viewModel, Widget? child) {
@@ -187,28 +181,28 @@ class AdminView extends StackedView<AdminViewModel> {
             CupertinoButton(
               child: Text('Добавить аренду'),
               onPressed: () => showDialog(
-                builder: (context) => RentDialog(rentService),
+                builder: (context) => RentDialog(context.global.rentService),
                 context: context,
               ),
             ),
             CupertinoButton(
               child: Text('Добавить услуги'),
               onPressed: () => showDialog(
-                builder: (context) => WorkDialog(workService),
+                builder: (context) => WorkDialog(context.global.workService),
                 context: context,
               ),
             ),
             CupertinoButton(
               child: Text('Добавить заказ'),
               onPressed: () => showDialog(
-                builder: (context) => OrderDialog(orderService),
+                builder: (context) => OrderDialog(context.global.orderService),
                 context: context,
               ),
             ),
             CupertinoButton(
               child: Text('Добавить вакансию'),
               onPressed: () => showDialog(
-                builder: (context) => VacancyDialog(vacancyService),
+                builder: (context) => VacancyDialog(context.global.vacancyService),
                 context: context,
               ),
             ),
@@ -220,7 +214,7 @@ class AdminView extends StackedView<AdminViewModel> {
 
   @override
   AdminViewModel viewModelBuilder(BuildContext context) {
-    return AdminViewModel(rentService, orderService, workService, vacancyService, configService);
+    return AdminViewModel(context.global.rentService, context.global.orderService, context.global.workService, context.global.vacancyService, context.global.configService);
   }
 }
 
