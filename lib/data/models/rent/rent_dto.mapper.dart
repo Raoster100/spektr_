@@ -29,9 +29,9 @@ class RentDtoMapper extends ClassMapperBase<RentDto> {
   static String? _$description(RentDto v) => v.description;
   static const Field<RentDto, String> _f$description =
       Field('description', _$description, opt: true);
-  static Uint8List? _$image(RentDto v) => v.image;
-  static const Field<RentDto, Uint8List> _f$image =
-      Field('image', _$image, opt: true);
+  static Uint8List? _$imageUrl(RentDto v) => v.imageUrl;
+  static const Field<RentDto, Uint8List> _f$imageUrl =
+      Field('imageUrl', _$imageUrl, opt: true);
 
   @override
   final MappableFields<RentDto> fields = const {
@@ -39,7 +39,7 @@ class RentDtoMapper extends ClassMapperBase<RentDto> {
     #name: _f$name,
     #price: _f$price,
     #description: _f$description,
-    #image: _f$image,
+    #imageUrl: _f$imageUrl,
   };
 
   static RentDto _instantiate(DecodingData data) {
@@ -48,7 +48,7 @@ class RentDtoMapper extends ClassMapperBase<RentDto> {
         name: data.dec(_f$name),
         price: data.dec(_f$price),
         description: data.dec(_f$description),
-        image: data.dec(_f$image));
+        imageUrl: data.dec(_f$imageUrl));
   }
 
   @override
@@ -105,7 +105,7 @@ abstract class RentDtoCopyWith<$R, $In extends RentDto, $Out>
       String? name,
       int? price,
       String? description,
-      Uint8List? image});
+      Uint8List? imageUrl});
   RentDtoCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
 
@@ -123,13 +123,13 @@ class _RentDtoCopyWithImpl<$R, $Out>
           String? name,
           int? price,
           Object? description = $none,
-          Object? image = $none}) =>
+          Object? imageUrl = $none}) =>
       $apply(FieldCopyWithData({
         if (id != $none) #id: id,
         if (name != null) #name: name,
         if (price != null) #price: price,
         if (description != $none) #description: description,
-        if (image != $none) #image: image
+        if (imageUrl != $none) #imageUrl: imageUrl
       }));
   @override
   RentDto $make(CopyWithData data) => RentDto(
@@ -137,7 +137,7 @@ class _RentDtoCopyWithImpl<$R, $Out>
       name: data.get(#name, or: $value.name),
       price: data.get(#price, or: $value.price),
       description: data.get(#description, or: $value.description),
-      image: data.get(#image, or: $value.image));
+      imageUrl: data.get(#imageUrl, or: $value.imageUrl));
 
   @override
   RentDtoCopyWith<$R2, RentDto, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t) =>
