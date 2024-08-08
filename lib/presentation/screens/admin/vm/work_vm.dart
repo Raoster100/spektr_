@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:spektr/domain/services/work_service.dart';
 import 'package:stacked/stacked.dart';
-
 import '../../../../data/models/work/work_dto.dart';
 
 class WorkViewModel extends BaseViewModel {
