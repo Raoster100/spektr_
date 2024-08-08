@@ -9,11 +9,11 @@ class RentDto with RentDtoMappable {
     required this.name,
     required this.price,
     this.description,
-    this.image
+    this.imageUrl
   });
   final int? id;
   final String name;
   final int price;
   final String? description;
-  final Uint8List? image;
+  final Uint8List? imageUrl;
 }
