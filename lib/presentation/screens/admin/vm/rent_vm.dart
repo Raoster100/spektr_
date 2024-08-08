@@ -27,7 +27,7 @@ class RentViewModel extends BaseViewModel {
   }
 
   Future<void> addRent() async {
-    await rentService.add(RentDto(name: nameController.text, price: int.tryParse(priceController.text) ?? 0));
+    await rentService.add(RentDto(name: nameController.text, price: int.tryParse(priceController.text) ?? 0, description: descriptionController.text));
   }
   void dispose() {
     super.dispose();
