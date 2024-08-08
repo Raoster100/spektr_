@@ -5,7 +5,7 @@ import '../../models/rent/rent_dto.dart';
 
 part 'remote_rent_ds.chopper.dart';
 
-@ChopperApi(baseUrl: 'Rent')
+@ChopperApi(baseUrl: 'RentVehicle')
 abstract class RemoteRentDataSource extends ChopperService
     implements AppRemoteDataSource {
   static RemoteRentDataSource create([ChopperClient? client]) =>
