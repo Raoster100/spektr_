@@ -19,7 +19,7 @@ final class _$RemoteRentDataSource extends RemoteRentDataSource {
 
   @override
   Future<Response<List<RentModel>>> fetch() {
-    final Uri $url = Uri.parse('Rent');
+    final Uri $url = Uri.parse('RentVehicle');
     final Request $request = Request(
       'GET',
       $url,
@@ -30,7 +30,7 @@ final class _$RemoteRentDataSource extends RemoteRentDataSource {
 
   @override
   Future<Response<RentModel>> getById(String id) {
-    final Uri $url = Uri.parse('Rent/${id}');
+    final Uri $url = Uri.parse('RentVehicle/${id}');
     final Request $request = Request(
       'GET',
       $url,
@@ -41,7 +41,7 @@ final class _$RemoteRentDataSource extends RemoteRentDataSource {
 
   @override
   Future<Response<dynamic>> add(RentDto dto) {
-    final Uri $url = Uri.parse('Rent');
+    final Uri $url = Uri.parse('RentVehicle');
     final $body = dto;
     final Request $request = Request(
       'POST',
@@ -54,7 +54,7 @@ final class _$RemoteRentDataSource extends RemoteRentDataSource {
 
   @override
   Future<Response<dynamic>> edit(RentDto dto) {
-    final Uri $url = Uri.parse('Rent');
+    final Uri $url = Uri.parse('RentVehicle');
     final $body = dto;
     final Request $request = Request(
       'PATCH',
@@ -67,7 +67,7 @@ final class _$RemoteRentDataSource extends RemoteRentDataSource {
 
   @override
   Future<Response<dynamic>> delete(int id) {
-    final Uri $url = Uri.parse('Rent');
+    final Uri $url = Uri.parse('RentVehicle');
     final Request $request = Request(
       'DELETE',
       $url,
