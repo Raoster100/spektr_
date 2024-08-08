@@ -1,7 +1,13 @@
 import 'package:chopper/chopper.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:provider/provider.dart';
+import 'package:spektr/data/data_sources/config/remote_config_ds.dart';
+import 'package:spektr/data/data_sources/order/remote_order_ds.dart';
+import 'package:spektr/data/data_sources/rent/remote_rent_ds.dart';
+import 'package:spektr/data/data_sources/vacancy/remote_vacancy_ds.dart';
+import 'package:spektr/data/data_sources/work/remote_work_ds.dart';
 import 'package:spektr/domain/di/core/app_async_dependency.dart';
+import 'package:spektr/domain/services/config_service.dart';
 import 'package:spektr/domain/services/order_service.dart';
 import 'package:spektr/domain/services/rent_service.dart';
 import 'package:spektr/domain/services/vacancy_service.dart';
@@ -19,6 +25,7 @@ class GlobalDependency extends AppAsyncDependency {
   late final RentService _rentService;
   late final WorkService _workService;
   late final VacancyService _vacancyService;
+  late final ConfigService _configService;
 
   @override
   Future<void> init(BuildContext context) async {
@@ -29,6 +36,11 @@ class GlobalDependency extends AppAsyncDependency {
       converter: JsonMappableConverter(),
       errorConverter: JsonMappableConverter(),
     );
+    _vacancyService = VacancyService(RemoteVacancyDataSource.create(_chopper));
+    _workService = WorkService(RemoteWorkDataSource.create(_chopper));
+    _configService = ConfigService(RemoteConfigDataSource.create(_chopper));
+    _rentService = RentService(RemoteRentDataSource.create(_chopper));
+    _orderService = OrderService(RemoteOrderDataSource.create(_chopper));
   }
 
   UploadService get uploadService => _uploadService;
@@ -37,6 +49,7 @@ class GlobalDependency extends AppAsyncDependency {
   RentService get rentService => _rentService;
   WorkService get workService => _workService;
   VacancyService get vacancyService => _vacancyService;
+  ConfigService get configService => _configService;
 
   @override
   void dispose() {
