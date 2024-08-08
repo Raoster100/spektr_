@@ -22,17 +22,9 @@ abstract class _$AppRouter extends RootStackRouter {
       );
     },
     Admin.name: (routeData) {
-      final args = routeData.argsAs<AdminArgs>();
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: AdminView(
-          args.rentService,
-          args.orderService,
-          args.workService,
-          args.vacancyService,
-          args.configService,
-          key: args.key,
-        ),
+        child: const AdminView(),
       );
     },
     Login.name: (routeData) {
@@ -84,59 +76,16 @@ class About extends PageRouteInfo<void> {
 
 /// generated route for
 /// [AdminView]
-class Admin extends PageRouteInfo<AdminArgs> {
-  Admin({
-    required RentService rentService,
-    required OrderService orderService,
-    required WorkService workService,
-    required VacancyService vacancyService,
-    required ConfigService configService,
-    Key? key,
-    List<PageRouteInfo>? children,
-  }) : super(
+class Admin extends PageRouteInfo<void> {
+  const Admin({List<PageRouteInfo>? children})
+      : super(
           Admin.name,
-          args: AdminArgs(
-            rentService: rentService,
-            orderService: orderService,
-            workService: workService,
-            vacancyService: vacancyService,
-            configService: configService,
-            key: key,
-          ),
           initialChildren: children,
         );
 
   static const String name = 'Admin';
 
-  static const PageInfo<AdminArgs> page = PageInfo<AdminArgs>(name);
-}
-
-class AdminArgs {
-  const AdminArgs({
-    required this.rentService,
-    required this.orderService,
-    required this.workService,
-    required this.vacancyService,
-    required this.configService,
-    this.key,
-  });
-
-  final RentService rentService;
-
-  final OrderService orderService;
-
-  final WorkService workService;
-
-  final VacancyService vacancyService;
-
-  final ConfigService configService;
-
-  final Key? key;
-
-  @override
-  String toString() {
-    return 'AdminArgs{rentService: $rentService, orderService: $orderService, workService: $workService, vacancyService: $vacancyService, configService: $configService, key: $key}';
-  }
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
