@@ -4,11 +4,24 @@ import 'package:spektr/data/data_sources/config/remote_config_ds.dart';
 import 'package:spektr/data/models/models.dart';
 import 'package:spektr/domain/services/core/app_service.dart';
 import 'package:spektr/domain/services/core/repo_mixin.dart';
+import 'package:spektr/domain/services/order_service.dart';
 import '../../data/models/config/config_dto.dart';
+import 'dart:async';
 
 class ConfigService extends AppService<RemoteConfigDataSource>
     with RepoStyleMixin<ConfigDto, ConfigModel> {
   ConfigService(super.rds);
+
+  // static ConfigService ? _configService;
+  // ConfigService._();
+  //
+  // static Future<ConfigService> instance() async {
+  //   if (_configService == null) {
+  //     _configService = ConfigService._();
+  //   }
+  //   return _configService!;
+  // }
+
 
   @override
   Future<void> add(ConfigDto dto) async {
