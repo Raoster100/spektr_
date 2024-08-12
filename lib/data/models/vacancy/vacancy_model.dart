@@ -1,4 +1,5 @@
 import 'package:dart_mappable/dart_mappable.dart';
+
 part 'vacancy_model.mapper.dart';
 
 @MappableClass()
@@ -7,8 +8,9 @@ class VacancyModel with VacancyModelMappable {
     required this.id,
     required this.name,
     required this.price,
-    required this.description
+    required this.description,
   });
+
   final int id;
   final String name;
   final int price;
