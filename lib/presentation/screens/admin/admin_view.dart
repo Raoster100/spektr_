@@ -1,19 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:spektr/data/models/models.dart';
-import 'package:spektr/data/models/rent/rent_dto.dart';
 import 'package:spektr/domain/di/global_dependency.dart';
-import 'package:spektr/domain/services/config_service.dart';
-import 'package:spektr/domain/services/order_service.dart';
-import 'package:spektr/domain/services/rent_service.dart';
-import 'package:spektr/domain/services/vacancy_service.dart';
-import 'package:spektr/domain/services/work_service.dart';
 import 'package:spektr/presentation/screens/admin/admin_vm.dart';
 import 'package:spektr/presentation/screens/admin/widget/order_dialog.dart';
 import 'package:spektr/presentation/screens/admin/widget/rent_dialog.dart';
 import 'package:spektr/presentation/screens/admin/widget/vacancy_dialog.dart';
 import 'package:spektr/presentation/screens/admin/widget/work_dialog.dart';
-import 'package:spektr/presentation/theme/app_typography.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:stacked/stacked.dart';
 
