@@ -1,4 +1,5 @@
 import 'package:dart_mappable/dart_mappable.dart';
+
 part 'config_model.mapper.dart';
 
 @MappableClass()
@@ -8,8 +9,9 @@ class ConfigModel with ConfigModelMappable {
     required this.address,
     required this.phone,
     required this.longitude,
-    required this.latitude
+    required this.latitude,
   });
+
   final int id;
   final String address;
   final String phone;
