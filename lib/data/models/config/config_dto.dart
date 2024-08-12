@@ -1,4 +1,5 @@
 import 'package:dart_mappable/dart_mappable.dart';
+
 part 'config_dto.mapper.dart';
 
 @MappableClass()
@@ -8,8 +9,9 @@ class ConfigDto with ConfigDtoMappable {
     this.address,
     this.phone,
     this.longitude,
-    this.latitude
+    this.latitude,
   });
+
   final int? id;
   final String? address;
   final String? phone;
