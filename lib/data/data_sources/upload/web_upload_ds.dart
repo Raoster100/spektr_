@@ -30,7 +30,7 @@ class WebUploadDataSource {
       var streamedResponse = await request.send();
       var response = await http.Response.fromStream(streamedResponse);
       final String data =
-      (jsonDecode(response.body) as Map<String, dynamic>)['link'];
+          (jsonDecode(response.body) as Map<String, dynamic>)['link'];
       return data;
     } catch (e) {
       return null;
