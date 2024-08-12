@@ -1,4 +1,5 @@
 import 'package:dart_mappable/dart_mappable.dart';
+
 part 'order_model.mapper.dart';
 
 @MappableClass()
@@ -8,8 +9,9 @@ class OrderModel with OrderModelMappable {
     required this.name,
     required this.phone,
     required this.type,
-    required this.hours
+    required this.hours,
   });
+
   final int id;
   final String name;
   final String phone;
