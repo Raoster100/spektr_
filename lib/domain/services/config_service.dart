@@ -22,7 +22,6 @@ class ConfigService extends AppService<RemoteConfigDataSource>
   //   return _configService!;
   // }
 
-
   @override
   Future<void> add(ConfigDto dto) async {
     await rds.add(dto);
