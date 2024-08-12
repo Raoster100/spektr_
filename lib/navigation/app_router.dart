@@ -38,10 +38,7 @@ class AppRouter extends _$AppRouter {
               page: Vacancy.page,
               path: 'vacancy',
             ),
-            AutoRoute(
-                page: Work.page,
-                path: 'work'
-            ),
+            AutoRoute(page: Work.page, path: 'work'),
           ],
         ),
         AutoRoute(
