@@ -1,5 +1,6 @@
 import 'dart:typed_data';
 import 'package:dart_mappable/dart_mappable.dart';
+
 part 'rent_dto.mapper.dart';
 
 @MappableClass()
@@ -9,8 +10,9 @@ class RentDto with RentDtoMappable {
     required this.name,
     required this.price,
     this.description,
-    this.imageUrl
+    this.imageUrl,
   });
+
   final int? id;
   final String name;
   final int price;
