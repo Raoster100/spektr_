@@ -6,7 +6,7 @@ abstract class AppService<Remote extends AppRemoteDataSource> {
 
   final Remote rds;
 
-
   Future<void> init(BuildContext context);
+
   void dispose();
 }
