@@ -1,4 +1,5 @@
 import 'package:dart_mappable/dart_mappable.dart';
+
 part 'order_dto.mapper.dart';
 
 @MappableClass()
@@ -8,8 +9,9 @@ class OrderDto with OrderDtoMappable {
     required this.name,
     required this.phone,
     this.type,
-    this.hours
+    this.hours,
   });
+
   final int? id;
   final String name;
   final String phone;
