@@ -44,11 +44,17 @@ class GlobalDependency extends AppAsyncDependency {
   }
 
   UploadService get uploadService => _uploadService;
+
   ChopperClient get chopper => _chopper;
+
   OrderService get orderService => _orderService;
+
   RentService get rentService => _rentService;
+
   WorkService get workService => _workService;
+
   VacancyService get vacancyService => _vacancyService;
+
   ConfigService get configService => _configService;
 
   @override
