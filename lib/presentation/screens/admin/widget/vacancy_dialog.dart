@@ -5,9 +5,9 @@ import 'package:spektr/domain/services/vacancy_service.dart';
 import 'package:spektr/presentation/screens/admin/vm/vacancy_vm.dart';
 import 'package:stacked/stacked.dart';
 
-
 class VacancyDialog extends StackedView<VacancyViewModel> {
-  const VacancyDialog(this.vacancyService, {
+  const VacancyDialog(
+    this.vacancyService, {
     super.key,
   });
 
