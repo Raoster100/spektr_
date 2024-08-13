@@ -20,9 +20,12 @@ class OrderViewModel extends BaseViewModel {
     orders = await orderService.fetch();
     notifyListeners();
   }
+
   Future<void> addOrder() async {
-    await orderService.add(OrderDto(name: nameController.text, phone: phoneController.text));
+    await orderService
+        .add(OrderDto(name: nameController.text, phone: phoneController.text));
   }
+
   void selectItem(String? item) {
     selectedItem = item;
     notifyListeners();
