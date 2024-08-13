@@ -52,8 +52,7 @@ class OrderDialog extends StackedView<OrderViewModel> {
                     child: DropdownButton<String>(
                       value: viewModel.selectedItem,
                       items: viewModel.items
-                          .map((item) =>
-                          DropdownMenuItem<String>(
+                          .map((item) => DropdownMenuItem<String>(
                               child: Text(item), value: item))
                           .toList(),
                       onChanged: viewModel.selectItem,
