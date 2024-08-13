@@ -18,7 +18,7 @@ class _MapWidgetState extends State<MapWidget> {
 
   List<LatLng> get _mapPoint => const [
         LatLng(44.707867, 37.772178),
-    //TODO: Hive coordinates
+        //TODO: Hive coordinates
       ];
 
   @override
