@@ -42,7 +42,8 @@ class RentCardWidget extends StatelessWidget {
               width: 300,
               height: 100,
               child: Text(
-                length ?? 'Описание экскаватора в котором будет что то написано',
+                length ??
+                    'Описание экскаватора в котором будет что то написано',
                 style: AppTypography.inter.black.s16.w600,
               ),
             ),
