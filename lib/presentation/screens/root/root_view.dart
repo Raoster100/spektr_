@@ -28,6 +28,7 @@ class _RootViewState extends State<RootView> {
   final phoneController = TextEditingController();
 
   String get phone => '+7(900)-00-00-000';
+
   //TODO: Hive phone
 
   @override
@@ -71,15 +72,18 @@ class _RootViewState extends State<RootView> {
     App.router.navigate(Rent());
     App.currentPage.update(AppPage.rent);
   }
-  void goToVacancy(){
+
+  void goToVacancy() {
     App.router.navigate(Vacancy());
     App.currentPage.update(AppPage.vacancy);
   }
+
   void goToAbout() {
     App.router.navigate(About());
     App.currentPage.update(AppPage.about);
   }
-  void goToWork(){
+
+  void goToWork() {
     App.router.navigate(Work());
     App.currentPage.update(AppPage.work);
   }
