@@ -25,10 +25,12 @@ class FloatingCardWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-           title ?? 'Number one',
+            title ?? 'Number one',
             style: AppTypography.inter.black.s20.w600,
           ),
-          SizedBox(height: 18,),
+          SizedBox(
+            height: 18,
+          ),
           Assets.images.rent.image(),
           Text(
             title ?? 'Number Two',
@@ -37,4 +39,5 @@ class FloatingCardWidget extends StatelessWidget {
         ],
       ),
     );
-}}
+  }
+}
