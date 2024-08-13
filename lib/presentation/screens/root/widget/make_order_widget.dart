@@ -4,14 +4,14 @@ import 'package:ru_phone_formatter/ru_phone_formatter.dart';
 import 'package:spektr/presentation/theme/app_colors.dart';
 import 'package:spektr/presentation/theme/app_typography.dart';
 
-
 class MakeOrderWidget extends StatelessWidget {
-   MakeOrderWidget({
+  MakeOrderWidget({
     super.key,
     required this.nameController,
     required this.phoneController,
     required this.phone,
   });
+
   final TextEditingController nameController;
   final TextEditingController phoneController;
   final String phone;
