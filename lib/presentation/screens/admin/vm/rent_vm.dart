@@ -4,7 +4,6 @@ import 'package:spektr/domain/services/rent_service.dart';
 import 'package:stacked/stacked.dart';
 import '../../../../data/models/rent/rent_dto.dart';
 
-
 class RentViewModel extends BaseViewModel {
   RentViewModel(this.rentService);
 
@@ -14,7 +13,6 @@ class RentViewModel extends BaseViewModel {
   Uint8List? pickedImage;
   final RentService rentService;
   String? selectedItem = 'Аренда';
-
 
   Future<void> fetchRent() async {
     await rentService.fetch();
@@ -27,8 +25,12 @@ class RentViewModel extends BaseViewModel {
   }
 
   Future<void> addRent() async {
-    await rentService.add(RentDto(name: nameController.text, price: int.tryParse(priceController.text) ?? 0, description: descriptionController.text));
+    await rentService.add(RentDto(
+        name: nameController.text,
+        price: int.tryParse(priceController.text) ?? 0,
+        description: descriptionController.text));
   }
+
   void dispose() {
     super.dispose();
     nameController.dispose();
